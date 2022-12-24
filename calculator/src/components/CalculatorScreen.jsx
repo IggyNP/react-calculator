@@ -1,5 +1,4 @@
-export const CalculatorScreen = () => {
+export const CalculatorScreen = ({screenValue}) => {
 
-
-	return (<div className="calculatorBox--skeleton-screen">I'm the screen</div>)
+	return (<div className="calculatorBox--skeleton-screen">{screenValue}</div>)
 }

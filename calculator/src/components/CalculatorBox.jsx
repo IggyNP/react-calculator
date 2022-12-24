@@ -8,7 +8,10 @@ export const CalculatorBox = () => {
 	const [screenValue, setScreenValue] = useState(0);
 
 	return (<div className="calculatorBox--skeleton">
-		<CalculatorScreen{screenValue}></CalculatorScreen>
-		<CalculatorBtn></CalculatorBtn>
+		<CalculatorScreen screenValue = {screenValue}></CalculatorScreen>
+		<CalculatorBtn> digit = {7} setScreenValue = {setScreenValue} </CalculatorBtn>
+		<CalculatorBtn> digit = {7} setScreenValue = {setScreenValue} </CalculatorBtn>
+		<CalculatorBtn> digit = {7} setScreenValue = {setScreenValue} </CalculatorBtn>
+		<CalculatorBtn> digit = {7} setScreenValue = {setScreenValue} </CalculatorBtn>
 		</div>);
 }

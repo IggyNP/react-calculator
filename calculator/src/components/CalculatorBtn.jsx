@@ -1,5 +1,12 @@
-export const CalculatorBtn = () => {
-
-
-	return (<div className="calculatorBox--skeleton-btn">7</div>)
-}
+export const CalculatorBtn = ({ digit, setScreenValue }) => {
+  return (
+    <button
+      className="calculatorBox--skeleton-btn"
+      onClick={() => {
+        setScreenValue(digit);
+      }}
+    >
+      {digit}
+    </button>
+  );
+};
