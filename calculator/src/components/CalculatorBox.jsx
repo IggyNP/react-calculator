@@ -9,7 +9,7 @@ export const CalculatorBox = () => {
 
 	return (<div className="calculatorBox--skeleton">
 		<CalculatorScreen screenValue = {screenValue}></CalculatorScreen>
-		<CalculatorBtn> digit = {7} setScreenValue = {setScreenValue} </CalculatorBtn>
+		<CalculatorBtn digit = {7} setScreenValue = {setScreenValue}> </CalculatorBtn>
 		<CalculatorBtn> digit = {7} setScreenValue = {setScreenValue} </CalculatorBtn>
 		<CalculatorBtn> digit = {7} setScreenValue = {setScreenValue} </CalculatorBtn>
 		<CalculatorBtn> digit = {7} setScreenValue = {setScreenValue} </CalculatorBtn>
