@@ -16,9 +16,6 @@ export const CalculatorBox = () => {
         <CalculatorBtn digit={"DEL"} setScreenValue={setScreenValue} screenValue = {screenValue}>
           {" "}
         </CalculatorBtn>
-        <CalculatorBtn digit={"%"} setScreenValue={setScreenValue} screenValue = {screenValue}>
-          {" "}
-        </CalculatorBtn>
         <CalculatorBtn digit={"/"} setScreenValue={setScreenValue} screenValue = {screenValue}>
           {" "}
         </CalculatorBtn>
