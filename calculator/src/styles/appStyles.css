@@ -1,15 +1,10 @@
-@font-face {
-	font-family: 'Roboto';
-	src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
-}
-
 .mainComponent {
 	width: 100vw;
 	height: 100vh;	
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Roboto', sans-serif;
+	font-family: sans-serif;
 }
 
 .signature {
