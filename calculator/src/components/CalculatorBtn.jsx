@@ -39,7 +39,7 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue }) => {
 		if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/))
 			return;
         // eslint-disable-next-line
-        else setScreenValue(eval(screenValue));
+        else setScreenValue(eval(screenValue).toString());
         break;
 
       default:
