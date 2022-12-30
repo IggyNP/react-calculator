@@ -45,7 +45,7 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue,className="ca
         default: 
         
         if(element.match(/[/*+-]/)){
-          screenValue.charAt(screenValue.length - 1).match(/[/*+-]/) && setScreenValue(screenValue.slice(0, -1) + element);
+          screenValue.charAt(screenValue.length - 1).match(/[/*+-]/) ? setScreenValue(screenValue.slice(0, -1) + element):setScreenValue(screenValue + element);
           /* NUEVO DESARROLLO. Al poner el && estamos diciendo que si la primera condicion es true se hace el set, si es false no llega a ejecutar el set */
         }else{
           setScreenValue(screenValue + element);
