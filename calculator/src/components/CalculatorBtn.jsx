@@ -36,18 +36,26 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue,className="ca
         break;
 
       case "=":
-		if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/))
-			return;
+		// if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/))
+		// 	return;
         // eslint-disable-next-line
-        else setScreenValue(eval(screenValue).toString());
+        setScreenValue(eval(screenValue).toString());
         break;
 
-        default: //NUEVA LOGICA
-          if (screenValue === "" && element.match(/[/*+-]/)) return;
-          if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/)) {
-            setScreenValue(screenValue.slice(0, -1) + element);
-          } 
+        default: 
+        
+        if(element.match(/[/*+-]/)){
+          screenValue.charAt(screenValue.length - 1).match(/[/*+-]/) && setScreenValue(screenValue.slice(0, -1) + element);
+          /* NUEVO DESARROLLO. Al poner el && estamos diciendo que si la primera condicion es true se hace el set, si es false no llega a ejecutar el set */
+        }else{
           setScreenValue(screenValue + element);
+        }
+
+        /*  ESTO SERIA LO VIEJO PERO SOLUCIONADO LO DE VARIOS SIGNOS */
+          // if (screenValue === "" && element.match(/[/*+-]/)) return;
+          // if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/) && element.match(/[/*+-]/)) {
+          //   setScreenValue(screenValue.slice(0, -1) + element);
+          // }else setScreenValue(screenValue + element);
     }
   };
 
