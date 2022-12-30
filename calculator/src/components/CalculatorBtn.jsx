@@ -1,4 +1,4 @@
-export const CalculatorBtn = ({ digit, setScreenValue, screenValue }) => {
+export const CalculatorBtn = ({ digit, setScreenValue, screenValue,className="calculatorBox--skeleton-btn" }) => {
   const handleClickBtn = (element) => {
     switch (element) {
       case "C":
@@ -49,11 +49,12 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue }) => {
 
   return (
     <button
-      className={
-        digit === "DEL" || digit === "="
-          ? "calculatorBox--skeleton-btn double-width"
-          : "calculatorBox--skeleton-btn"
-      }
+    className={className}
+      // className={
+      //   digit === "DEL" || digit === "="
+      //     ? "calculatorBox--skeleton-btn double-width"
+      //     : "calculatorBox--skeleton-btn"
+      // }
       onClick={() => {
         handleClickBtn(digit);
       }}

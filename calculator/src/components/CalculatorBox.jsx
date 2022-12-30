@@ -6,6 +6,7 @@ import { CalculatorScreen } from "./CalculatorScreen";
 export const CalculatorBox = () => {
   const [screenValue, setScreenValue] = useState("");
 
+
   return (
     <div className="calculatorBox--skeleton">
       <CalculatorScreen screenValue={screenValue}></CalculatorScreen>
@@ -13,7 +14,7 @@ export const CalculatorBox = () => {
         <CalculatorBtn digit={"C"} setScreenValue={setScreenValue} screenValue={screenValue}>
           {" "}
         </CalculatorBtn>
-        <CalculatorBtn digit={"DEL"} setScreenValue={setScreenValue} screenValue = {screenValue}>
+        <CalculatorBtn digit={"DEL"} setScreenValue={setScreenValue} screenValue = {screenValue} className={"calculatorBox--skeleton-btn double-width"}>
           {" "}
         </CalculatorBtn>
         <CalculatorBtn digit={"/"} setScreenValue={setScreenValue} screenValue = {screenValue}>
@@ -69,7 +70,7 @@ export const CalculatorBox = () => {
         <CalculatorBtn digit={"."} setScreenValue={setScreenValue} screenValue = {screenValue}>
           {" "}
         </CalculatorBtn>
-        <CalculatorBtn digit={"="} setScreenValue={setScreenValue} screenValue = {screenValue}>
+        <CalculatorBtn digit={"="} setScreenValue={setScreenValue} screenValue = {screenValue} className={"calculatorBox--skeleton-btn double-width"}>
           {" "}
         </CalculatorBtn>
       </div>
