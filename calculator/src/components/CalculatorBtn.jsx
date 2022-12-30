@@ -9,16 +9,16 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue,className="ca
         setScreenValue(screenValue.slice(0, -1));
         break;
 
-      case "/":
-      case "*":
-      case "+":
-      case "-":
-        if (screenValue === "") return;
-        if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/)) {
-          setScreenValue(screenValue.slice(0, -1) + element);
-        } 
-		else setScreenValue(screenValue + element);
-        break;
+      // case "/":
+      // case "*":
+      // case "+":
+      // case "-":
+      //   if (screenValue === "") return;
+      //   if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/)) {
+      //     setScreenValue(screenValue.slice(0, -1) + element);
+      //   } 
+		  //   else setScreenValue(screenValue + element);
+      //   break;
 
       case ".":
         const elements = screenValue.split(/[/*+-]/);
@@ -42,8 +42,12 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue,className="ca
         else setScreenValue(eval(screenValue).toString());
         break;
 
-      default:
-        setScreenValue(screenValue + element);
+        default: //NUEVA LOGICA
+          if (screenValue === "" && element.match(/[/*+-]/)) return;
+          if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/)) {
+            setScreenValue(screenValue.slice(0, -1) + element);
+          } 
+          setScreenValue(screenValue + element);
     }
   };
 
