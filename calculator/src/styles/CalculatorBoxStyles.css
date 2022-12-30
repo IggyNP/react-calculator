@@ -1,35 +1,45 @@
 .calculatorBox--skeleton {
-	width: 420px;
-	height: 600px;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-	padding: 20px 20px;
-	background-color: rgb(151, 151, 151);
-	display: flex;
-	flex-direction: column;
-	gap: 6.9px;
-	border-radius: 5%;
+  width: 420px;
+  height: 600px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px 20px;
+  background-color: rgb(151, 151, 151);
+  display: flex;
+  flex-direction: column;
+  gap: 6.9px;
+  border-radius: 5%;
 }
+
 .calculatorBox--skeleton-screen {
-	border: 1px solid black;
-	width: 405px;
-	height: 69px;
-	background-color: rgb(245, 245, 245);
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	padding-right: 15px;
-	font-size: 25px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+  border: 1px solid black;
+  width: 405px;
+  height: 69px;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
+
 .calculatorBox--skeleton-btn {
-	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-	width: 25%;
-	font-size: 60px;
-	display: inline-block;
-	background-color: rgb(84, 84, 84);
-	color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: 25%;
+  font-size: 60px;
+  display: inline-block;
+  background-color: rgb(84, 84, 84);
+  color: white;
+  user-select: none;
 }
-.btn0 {
-	width: 50%;
+
+.double-width {
+  width: 210px;
+}
+
+.calculatorBox--skeleton-btn:hover{
+	opacity: 50%;
+	cursor: pointer;
 }

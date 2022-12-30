@@ -4,5 +4,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
 
+.signature {
+	position: fixed;
+	bottom: 0;
+	right: 100px;
+	text-align: center;
+	width: 80px;
+	font-size: large;
+	font-weight: 500;
+}
+
+#cat {
+	width: 80%;
+	margin-bottom: -20px;
 }

@@ -48,7 +48,11 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue }) => {
 
   return (
     <button
-      className="calculatorBox--skeleton-btn"
+      className={
+        digit === "DEL" || digit === "="
+          ? "calculatorBox--skeleton-btn double-width"
+          : "calculatorBox--skeleton-btn"
+      }
       onClick={() => {
         handleClickBtn(digit);
       }}

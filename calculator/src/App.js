@@ -1,4 +1,5 @@
 import { CalculatorBox } from "./components/CalculatorBox";
+import { Signature } from "./components/Signature";
 import "./styles/appStyles.css"
 
 function App() {
@@ -6,6 +7,8 @@ function App() {
 	<div className="mainComponent">
 		<CalculatorBox>
 		</CalculatorBox>
+		<Signature>
+		</Signature>
 	</div>
   )
 }
