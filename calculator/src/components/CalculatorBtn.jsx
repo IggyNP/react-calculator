@@ -16,9 +16,8 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue }) => {
         if (screenValue === "") return;
         if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/)) {
           setScreenValue(screenValue.slice(0, -1) + element);
-        } else {
-          setScreenValue(screenValue + element);
-        }
+        } 
+		else setScreenValue(screenValue + element);
         break;
 
       case ".":
@@ -37,8 +36,10 @@ export const CalculatorBtn = ({ digit, setScreenValue, screenValue }) => {
         break;
 
       case "=":
+		if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/))
+			return;
         // eslint-disable-next-line
-        setScreenValue(eval(screenValue));
+        else setScreenValue(eval(screenValue));
         break;
 
       default:
