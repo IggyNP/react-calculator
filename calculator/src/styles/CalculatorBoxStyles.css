@@ -39,7 +39,7 @@
   width: 210px;
 }
 
-.calculatorBox--skeleton-btn:hover{
-	opacity: 50%;
-	cursor: pointer;
+.calculatorBox--skeleton-btn:hover {
+  opacity: 50%;
+  cursor: pointer;
 }

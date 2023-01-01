@@ -1,23 +1,23 @@
 .mainComponent {
-	width: 100vw;
-	height: 100vh;	
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
 }
 
 .signature {
-	position: fixed;
-	bottom: 0;
-	right: 100px;
-	text-align: center;
-	width: 80px;
-	font-size: large;
-	font-weight: 500;
+  position: fixed;
+  bottom: 0;
+  right: 100px;
+  text-align: center;
+  width: 80px;
+  font-size: large;
+  font-weight: 500;
 }
 
 #cat {
-	width: 80%;
-	margin-bottom: -20px;
+  width: 80%;
+  margin-bottom: -20px;
 }
