@@ -5,6 +5,8 @@ export const CalculatorBtn = ({
   className = "calculatorBox--skeleton-btn",
 }) => {
   const handleClickBtn = (element) => {
+	const lastElement = screenValue.charAt(screenValue.length - 1);
+	
     switch (element) {
       case "C":
         setScreenValue("");
@@ -16,28 +18,25 @@ export const CalculatorBtn = ({
 
       case ".":
         const elements = screenValue.split(/[/*+-]/);
-        const lastElement = elements[elements.length - 1];
 
         if (screenValue.match(/^\d|^\./)) {
-          if (lastElement.match(/\./)) {
-            return;
-          } else {
-            setScreenValue(screenValue + element);
-          }
+          elements[elements.length - 1].match(/\./)
+          	? setScreenValue(screenValue)
+          	: setScreenValue(screenValue + element);
         } else {
           setScreenValue("0" + element);
         }
         break;
 
       case "=":
-        if (screenValue.charAt(screenValue.length - 1).match(/[/*+-]/)) return;
+        if (lastElement.match(/[/*+-]/)) return;
         // eslint-disable-next-line
         setScreenValue(eval(screenValue).toString());
         break;
 
       default:
         if (element.match(/[/*+-]/)) {
-          screenValue.charAt(screenValue.length - 1).match(/[/*+-]/)
+          lastElement.match(/[/*+-]/)
             ? setScreenValue(screenValue.slice(0, -1) + element)
             : setScreenValue(screenValue + element);
         } else {
