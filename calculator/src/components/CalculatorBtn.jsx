@@ -29,19 +29,22 @@ export const CalculatorBtn = ({
         break;
 
       case "=":
-        if (lastElement.match(/[/*+-]/)) return;
+        if (lastElement.match(/[/*+-.]/)) return;
         // eslint-disable-next-line
         setScreenValue(eval(screenValue).toString());
         break;
 
-      default:
-        if (element.match(/[/*+-]/)) {
-          lastElement.match(/[/*+-]/)
-            ? setScreenValue(screenValue.slice(0, -1) + element)
-            : setScreenValue(screenValue + element);
-        } else {
-          setScreenValue(screenValue + element);
-        }
+		default:
+			if (lastElement === '.' && element.match(/[/*+-]/)) {
+			  return;
+			}
+			if (lastElement.match(/[/*+-]/) && element.match(/[\d]/)) {
+			  setScreenValue(screenValue + element);
+			} else if(lastElement.match(/[/*+-]/) && element.match(/[/*+-]/)){
+			  setScreenValue(screenValue.slice(0, -1) + element);
+			}else {
+			  setScreenValue(screenValue + element);
+			}		  
     }
   };
 
