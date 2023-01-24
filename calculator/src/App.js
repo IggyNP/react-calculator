@@ -5,8 +5,8 @@ import "./styles/appStyles.css";
 function App() {
   return (
     <div className="mainComponent">
-      <CalculatorBox></CalculatorBox>
-      <Signature></Signature>
+      <CalculatorBox />
+      <Signature />
     </div>
   );
 }
