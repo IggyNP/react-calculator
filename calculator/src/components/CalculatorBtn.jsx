@@ -5,8 +5,10 @@ export const CalculatorBtn = ({
   className = "calculatorBox--skeleton-btn",
 }) => {
   const handleClickBtn = (element) => {
-	const lastElement = screenValue.charAt(screenValue.length - 1);
-	
+    const lastElement = screenValue.charAt(screenValue.length - 1);
+	const elements = screenValue.split(/[/*+-]/);
+	const last = elements[elements.length - 1];
+
     switch (element) {
       case "C":
         setScreenValue("");
@@ -17,34 +19,40 @@ export const CalculatorBtn = ({
         break;
 
       case ".":
-        const elements = screenValue.split(/[/*+-]/);
-
         if (screenValue.match(/^\d|^\./)) {
-          elements[elements.length - 1].match(/\./)
-          	? setScreenValue(screenValue)
-          	: setScreenValue(screenValue + element);
-        } else {
+          last.match(/\./)
+            ? setScreenValue(screenValue)
+            : setScreenValue(screenValue + element);
+		} else {
           setScreenValue("0" + element);
         }
         break;
 
       case "=":
-        if (lastElement.match(/[/*+-.]/)) return;
+        if (screenValue.length === 0) {
+          return;
+        }
+        if (lastElement.match(/[/*+-.]/)) {
+          return;
+        }
         // eslint-disable-next-line
         setScreenValue(eval(screenValue).toString());
         break;
 
-		default:
-			if (lastElement === '.' && element.match(/[/*+-]/)) {
-			  return;
-			}
-			if (lastElement.match(/[/*+-]/) && element.match(/[\d]/)) {
-			  setScreenValue(screenValue + element);
-			} else if(lastElement.match(/[/*+-]/) && element.match(/[/*+-]/)){
-			  setScreenValue(screenValue.slice(0, -1) + element);
-			}else {
-			  setScreenValue(screenValue + element);
-			}		  
+      default:
+        if (screenValue.length === 0 && element.match(/[/*+-]/)) {
+          return;
+        }
+        if (lastElement === "." && element.match(/[/*+-]/)) {
+          return;
+        }
+        if (lastElement.match(/[/*+-]/) && element.match(/[\d]/)) {
+          setScreenValue(screenValue + element);
+        } else if (lastElement.match(/[/*+-]/) && element.match(/[/*+-]/)) {
+          setScreenValue(screenValue.slice(0, -1) + element);
+        } else {
+          setScreenValue(screenValue + element);
+        }
     }
   };
 
