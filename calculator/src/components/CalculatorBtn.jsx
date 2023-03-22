@@ -18,6 +18,13 @@ export const CalculatorBtn = ({
         setScreenValue(screenValue.slice(0, -1));
         break;
 
+		case "0":
+			if (screenValue.charAt(0) === '0' && screenValue.charAt(1) !== '.')
+				setScreenValue(screenValue);
+			else
+			setScreenValue(screenValue + element);
+		break;
+
       case ".":
         if (screenValue.match(/^\d|^\./)) {
           last.match(/\./)
